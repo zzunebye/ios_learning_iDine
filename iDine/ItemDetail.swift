@@ -30,6 +30,10 @@ struct ItemDetail: View {
                 order.add(item: item)
             }
             .buttonStyle(.borderedProminent)
+            .font(Font.body)
+            .backgroundStyle(.indigo)
+            .background(.bar)
+            .padding()
         
             Spacer()
         }

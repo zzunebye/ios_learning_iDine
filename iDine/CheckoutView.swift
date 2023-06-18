@@ -19,6 +19,7 @@ struct CheckoutView: View {
     @State private var loyaltyNumber = ""
     @State private var tipAmount = 15
     @State private var showingPaymentAlert = false
+    @State private var pickupTime = Date()
     
     var totalPrice: String {
         let total = Double(order.total)
@@ -46,6 +47,11 @@ struct CheckoutView: View {
                         Text("\($0)%")
                     }
                 }.pickerStyle(.segmented)
+            }
+            
+            Section("When do you want to pick up?") {
+                DatePicker("Select a time", selection: $pickupTime, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(.compact)
             }
             
             Section("Total: \(totalPrice)") {
